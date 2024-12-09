@@ -32,11 +32,24 @@ function readFileLineByLine(filePath) {
     return true;
   }
 
+  function calcCorrect(arr) {
+    for (i = 0; i <= arr.length - 1; ++i) {
+      const newArr = [...arr]
+      newArr.splice(i, 1);
+      if (calc(newArr)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   let count = 0;
   rl.on("line", (line) => {
     const arr = line.split(" ").map(Number);
 
     if (calc(arr)) {
+      ++count;
+    } else if (calcCorrect(arr)){
       ++count;
     }
   });

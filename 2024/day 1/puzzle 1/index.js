@@ -35,5 +35,5 @@ function readFileLineByLine(filePath) {
 }
 
 // Call the function with a file path
-readFileLineByLine('sample.txt');
+readFileLineByLine('../sample.txt');
 
